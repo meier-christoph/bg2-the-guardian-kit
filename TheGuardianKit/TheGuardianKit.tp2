@@ -1,0 +1,82 @@
+BACKUP ~TheGuardianKit/backup~
+AUTHOR ~Christoph Meier~
+
+// ===========================================================================================
+
+BEGIN ~Kit : The Guardian~
+
+ADD_KIT ~TG!KIT~
+
+/* this line is appened to CLASWEAP.2DA */
+~TG!KIT                  1           1           1           1           1           1           1           1~
+
+/* this string is appened column-wise to WEAPPROF.2DA, starting with the third line*/
+~TG!KIT         1 1 1 1 1 1 1 1 1 1 1 1 1 5 5 5 1 1 1 1 1 1 1 1 5 5 1 1 1 1 1 3 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2~
+
+/* this line is appened to ABCLASRQ.2DA */
+~TG!KIT                 17       17     15      10      10      10~
+
+/* this line is appened to ABCLSMOD.2DA */
+~TG!KIT                  0        0      0       0       0       0~
+
+/* this line is appened to ABDCDSRQ.2DA */
+~TG!KIT                 17       17      0       0       0       0~
+
+/* this line is appened to ABDCSCRQ.2DA */
+~TG!KIT                 15       15      0       0       0       0~
+
+/* this line is appened to ALIGNMNT.2DA */
+~TG!KIT              0                   0                   0                   0                   1                   0                   0                   0                   0~
+
+/* this line goes to DUALCLAS.2DA */
+~TG!KIT                  1       0       0       0       1       1~
+
+/* this is the name of your abilities 2DA file, in the style of CLAB***.2da */
+~TheGuardianKit/TG!KIT.2da~
+
+/* these are the 2da files listed in KITTABLE.2DA that you want your kit to be a part of. List as many as you like. */
+~K_T_H  K_T_E   K_T_HE~
+
+/* this is the "unusable" value you want for you kit and also the class value. These would normally appear at the end of KITLIST.2DA */
+~0x00040000    4~
+
+/* this is the High Level Ability Abbreviation (see LUABBR.2DA). Normal values are Fi0, Pa0, etc. */
+~Th0~
+
+/* this is the TOB starting equipment list. Put a * if you don't want something. See 25STWEAP.2DA. */
+~LEAT20 DART03,40 HELM07 BAG26 RING06 RING31 CLCK27 BOOT01 AMUL19 BRAC10 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 BOW11 BOW19 XBOW06~
+
+/* these are the strings you want for the lower, mixed and help descriptions for your kit. */
+SAY ~the guardian~
+SAY ~The Guardian~
+SAY ~The Guardian:
+Keeper of the balance between the forces of light and darkness. One and only one is chosen to serve the world from the shadows to protect and fight in order to preserve the harmony.
+This strong warrior has access to ancient magic power helping him during his journey. Every generation has his own guardian and every guardian has his own special powers but most also have some natural affinity with magic.
+Nevertheless, the guardian is not allowed to reach for glory, he needs to remain hidden in the shadow, protecting this world.
+
+Advantages:
+- Excellent fighting skills despite being a thief :
+    - he starts with 50HP extra and one additional attack per round.
+    - his THAC0 and damage improve like if he were a fighter.
+    - every 3 levels he gains -1 AC and +1 on all saves.
+- He starts with bonus points in hide in the shadows and stealth.
+- He has natural magic resistance as he is protected by ancient magic power.
+- His backstab multiplier is not capped at x5.
+- He can infuse his weapons with poison (same as Assassins).
+- At lvl 10 he gains the ability to teleport, moving around from shadow to shadow.
+
+Disadvantages:
+- Has to chose and stay of neutral alignment.~
+
+COPY ~TheGuardianKit/portraits~ ~portraits~
+
+COPY ~TheGuardianKit/TG!INIT.spl~ ~override~
+COPY ~TheGuardianKit/TG!LVL1.spl~ ~override~
+COPY ~TheGuardianKit/TG!LVL2.spl~ ~override~
+COPY ~TheGuardianKit/TG!LVL3.spl~ ~override~
+
+COPY ~TheGuardianKit/TG!TELE.spl~ ~override~
+SAY NAME1 ~Shadow walk~
+SAY UNIDENTIFIED_DESC ~Teleport, moving quickly from one shadow to another.~
+
+// ===========================================================================================
