@@ -1,4 +1,4 @@
-# Smart AI for BGII
+# The Guardian Kit for BGII
 
 I was recently doing some clean up and backup work on my old PC and found these files.
 
